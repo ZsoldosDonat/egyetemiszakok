@@ -1,0 +1,44 @@
+{
+  "szakok": [
+    {
+      "major": "Gépészmérnöki",
+      "codes": ["BME", "DE", "OE", "SZE", "PTE"]
+    },
+    {
+      "major": "Jogász",
+      "codes": ["ELTE", "PPKE", "DE", "SZTE", "PTE"]
+    },
+    {
+      "major": "Gazdálkodási és menedzsment",
+      "codes": ["BME", "CORVINUS", "OE", "SZE", "DE", "PTE"]
+    },
+    {
+      "major": "Orvosi",
+      "codes": ["SE", "DE", "PTE", "SZTE"]
+    },
+    {
+      "major": "Informatikai mérnök",
+      "codes": ["BME", "ELTE", "OE", "DE", "SZE"]
+    },
+    {
+      "major": "Általános bölcsész",
+      "codes": ["ELTE", "PPKE", "PTE", "SZTE"]
+    },
+    {
+      "major": "Építészmérnöki",
+      "codes": ["BME", "DE", "SZE", "PTE"]
+    },
+    {
+      "major": "Mezőgazdasági mérnök",
+      "codes": ["MATE", "DE", "SZTE"]
+    },
+    {
+      "major": "Kommunikáció és médiatudomány",
+      "codes": ["ELTE", "PPKE", "PTE", "CORVINUS"]
+    },
+    {
+      "major": "Nemzetközi tanulmányok",
+      "codes": ["CORVINUS", "ELTE", "PPKE", "DE"]
+    }
+  ]
+}

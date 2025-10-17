@@ -1,0 +1,44 @@
+{
+  "egyetemek": [
+    {
+      "name": "Budapesti Műszaki és Gazdaságtudományi Egyetem",
+      "code": "BME"
+    },
+    {
+      "name": "Eötvös Loránd Tudományegyetem",
+      "code": "ELTE"
+    },
+    {
+      "name": "Debreceni Egyetem",
+      "code": "DE"
+    },
+    {
+      "name": "Pécsi Tudományegyetem",
+      "code": "PTE"
+    },
+    {
+      "name": "Széchenyi István Egyetem",
+      "code": "SZE"
+    },
+    {
+      "name": "Pázmány Péter Katolikus Egyetem",
+      "code": "PPKE"
+    },
+    {
+      "name": "Budapesti Corvinus Egyetem",
+      "code": "CORVINUS"
+    },
+    {
+      "name": "Óbudai Egyetem",
+      "code": "OE"
+    },
+    {
+      "name": "Magyar Agrár- és Élettudományi Egyetem",
+      "code": "MATE"
+    },
+    {
+      "name": "Semmelweis Egyetem",
+      "code": "SE"
+    }
+  ]
+}
