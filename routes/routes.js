@@ -40,5 +40,21 @@ router.post('/universities', async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
+//add a new major
+router.post('/majors', async (req, res) => {
+    const major = new majorModel({
+        name: req.body.name,
+        code: req.body.code,
+    });
+
+    try {
+        const savedMajor = await major.save();
+        res.status(201).json(savedMajor);
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+});
+
 
 module.exports = router;
