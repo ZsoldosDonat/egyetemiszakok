@@ -18,3 +18,7 @@ app.use('/api/', routes);
 app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
 })
+
+
+
+//a todo bol kivenni a testeket 5db/get/post
