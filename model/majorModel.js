@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const majorSchema = new mongoose.Schema({
-    name: { type: String, required: true },
+    major: { type: String, required: true },
 
     codes: { type: [String], required: true }
 });

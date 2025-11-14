@@ -13,6 +13,16 @@ database.once('connected', () => {
 })
 const app = express();
 app.use(express.json());
+
+// Debug middleware
+app.use((req, res, next) => {
+    console.log('Request Method:', req.method);
+    console.log('Request URL:', req.url);
+    console.log('Content-Type:', req.get('Content-Type'));
+    console.log('Body:', req.body);
+    next();
+});
+
 app.use('/api/', routes);
 app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
