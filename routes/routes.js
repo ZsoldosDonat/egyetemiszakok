@@ -3,6 +3,7 @@ const majorModel = require('../model/majorModel');
 const universityModel = require('../model/universityModel');
 const router = express.Router();
 
+
 //list all universities
 router.get('/universities', async (req, res) => {
     try {
@@ -56,5 +57,9 @@ router.post('/majors', async (req, res) => {
     }
 });
 
+exports.createMajor = (req, res,next) => {
+    const data = majorModel.create(req.body);
+    res.status(201).json(data);
+}
 
 module.exports = router;
