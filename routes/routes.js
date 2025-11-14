@@ -3,6 +3,7 @@ const majorModel = require('../model/majorModel');
 const universityModel = require('../model/universityModel');
 const router = express.Router();
 
+
 //list all universities
 router.get('/universities', async (req, res) => {
     try {
