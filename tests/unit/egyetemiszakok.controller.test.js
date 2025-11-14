@@ -60,3 +60,78 @@ describe('MajorController.getMajors', () => {
         expect(res._getJSONData()).toStrictEqual([newMajor]);
     });
 });
+
+// MAJOR GET BY ID
+describe('MajorController.getMajorById', () => {
+    it('Should have a getMajorById function', () => {
+        expect(typeof majorController.getMajorById).toBe('function');
+    });
+    it('Should call majorModel.findById', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorController.getMajorById(req, res, next);
+        expect(majorModel.findById).toHaveBeenCalledWith('507f1f77bcf86cd799439011');
+    });
+    it('Should return 200 response code', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorController.getMajorById(req, res, next);
+        expect(res.statusCode).toBe(200);
+        expect(res._isEndCalled()).toBeTruthy();
+    });
+    it('Should return json response', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorModel.findById.mockReturnValue(newMajor);
+        majorController.getMajorById(req, res, next);
+        expect(res._getJSONData()).toStrictEqual(newMajor);
+    });
+});
+
+// MAJOR UPDATE
+describe('MajorController.updateMajor', () => {
+    it('Should have a updateMajor function', () => {
+        expect(typeof majorController.updateMajor).toBe('function');
+    });
+    it('Should call majorModel.findByIdAndUpdate', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        req.body = { name: 'Updated Major' };
+        majorController.updateMajor(req, res, next);
+        expect(majorModel.findByIdAndUpdate).toHaveBeenCalledWith('507f1f77bcf86cd799439011', { name: 'Updated Major' }, { new: true });
+    });
+    it('Should return 200 response code', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorController.updateMajor(req, res, next);
+        expect(res.statusCode).toBe(200);
+        expect(res._isEndCalled()).toBeTruthy();
+    });
+    it('Should return json response', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        const updatedMajor = { ...newMajor, name: 'Updated Major' };
+        majorModel.findByIdAndUpdate.mockReturnValue(updatedMajor);
+        majorController.updateMajor(req, res, next);
+        expect(res._getJSONData()).toStrictEqual(updatedMajor);
+    });
+});
+
+// MAJOR DELETE
+describe('MajorController.deleteMajor', () => {
+    it('Should have a deleteMajor function', () => {
+        expect(typeof majorController.deleteMajor).toBe('function');
+    });
+    it('Should call majorModel.findByIdAndDelete', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorController.deleteMajor(req, res, next);
+        expect(majorModel.findByIdAndDelete).toHaveBeenCalledWith('507f1f77bcf86cd799439011');
+    });
+    it('Should return 200 response code', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorController.deleteMajor(req, res, next);
+        expect(res.statusCode).toBe(200);
+        expect(res._isEndCalled()).toBeTruthy();
+    });
+    it('Should return json response', () => {
+        req.params.id = '507f1f77bcf86cd799439011';
+        majorModel.findByIdAndDelete.mockReturnValue(newMajor);
+        majorController.deleteMajor(req, res, next);
+        expect(res._getJSONData()).toStrictEqual(newMajor);
+    });
+});
+
