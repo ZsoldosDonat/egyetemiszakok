@@ -22,5 +22,5 @@ exports.updateUniversity = (req, res, next) => {
 
 exports.deleteUniversity = (req, res, next) => {
     const data = universityModel.findOneAndDelete({ code: req.params.code });
-    res.status(200).json(data);
+    res.status(204).json(data);
 };

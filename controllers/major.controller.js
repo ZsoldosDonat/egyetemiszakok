@@ -22,5 +22,5 @@ exports.updateMajor = (req, res, next) => {
 
 exports.deleteMajor = (req, res, next) => {
     const data = majorModel.findByIdAndDelete(req.params.id);
-    res.status(200).json(data);
+    res.status(204).json(data);
 };
