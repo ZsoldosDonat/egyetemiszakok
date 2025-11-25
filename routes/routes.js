@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/universities', async (req, res) => {
     try {
         const data = await universityModel.find();
-        res.json(data)
+        res.status(200).json(data);
     }
     catch (error) {
         res.status(500).json({ message: error.message })
@@ -32,7 +32,7 @@ router.get('/universities/:code', async (req, res) => {
         }
         
         console.log('Found university:', university);
-        res.json(university);
+        res.status(200).json(university);
     } catch (error) {
         console.error('Error:', error.message);
         res.status(500).json({ message: error.message });
@@ -44,6 +44,7 @@ router.get('/majors', async (req, res) => {
     try {
         const data = await majorModel.find();
         res.json(data)
+        res.status(200);
     }
     catch (error) {
         res.status(500).json({ message: error.message })
@@ -60,7 +61,7 @@ router.get('/majors/:id', async (req, res) => {
             return res.status(404).json({ message: 'Major not found' });
         }
         
-        res.json(major);
+        res.status(200).json(major);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -128,7 +129,7 @@ router.patch('/universities/:code', async (req, res) => {
             return res.status(404).json({ message: 'University not found' });
         }
 
-        res.json(result);
+        res.status(200).json(result);
     }
     catch (error) {
         res.status(400).json({ message: error.message });
@@ -152,7 +153,7 @@ router.patch('/majors/:id', async (req, res) => {
             return res.status(404).json({ message: 'Major not found' });
         }
 
-        res.json(result);
+        res.status(200).json(result);
     }
     catch (error) {
         res.status(400).json({ message: error.message });
@@ -171,7 +172,7 @@ router.delete('/universities/:code', async (req, res) => {
             return res.status(404).json({ message: 'University not found' });
         }
 
-        res.json({ message: 'University deleted successfully', data: result });
+        res.status(204).json({ message: 'University deleted successfully', data: result });
     }
     catch (error) {
         res.status(500).json({ message: error.message });
@@ -188,7 +189,7 @@ router.delete('/majors/:id', async (req, res) => {
             return res.status(404).json({ message: 'Major not found' });
         }
 
-        res.json({ message: 'Major deleted successfully', data: result });
+        res.status(204).json({ message: 'Major deleted successfully', data: result });
     }
     catch (error) {
         res.status(500).json({ message: error.message });
